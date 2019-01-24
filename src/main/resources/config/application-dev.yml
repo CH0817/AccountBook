@@ -1,0 +1,10 @@
+server:
+  port: 8082
+spring:
+  thymeleaf:
+    cache: false
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://192.168.56.1:3333/account_book
+    username: rex
+    password: ji394su3

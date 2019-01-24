@@ -1,0 +1,10 @@
+spring:
+  profiles:
+    active: @profileActive@
+  messages:
+    basename: i18n/messages
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy/MM/dd
+logging:
+  config: classpath:log/logback.xml
