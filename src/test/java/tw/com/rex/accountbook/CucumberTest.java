@@ -25,7 +25,7 @@ public class CucumberTest {
 
     @Given("user on the register page")
     public void userOnTheRegisterPage() throws Exception {
-        this.mockMvc.perform(get("/register"))//
+        this.mockMvc.perform(get("/user/register"))//
                 .andExpect(status().isOk())//
                 .andExpect(view().name("register"))//
                 .andDo(print());
