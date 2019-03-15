@@ -3,6 +3,7 @@ Feature: User register
   Background:
     Given user on the register page
 
+  @register
   Scenario: The user register success
     When a user enter a not registered email and length 8 to 12 password
       | email           | password |
