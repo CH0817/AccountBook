@@ -8,7 +8,7 @@ Feature: User register
       | email           | password |
       | rex@mail.com    | 12345678 |
       | tester@mail.com | 1111111  |
-    Then show message to user
+    Then show "註冊成功" to user
     And store user information
     And forward to main page
 
