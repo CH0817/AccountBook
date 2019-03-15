@@ -4,6 +4,6 @@ import tw.com.rex.accountbook.model.User;
 
 public interface UserService {
 
-    Long register(User user) throws Exception;
+    User register(User user) throws Exception;
 
 }
