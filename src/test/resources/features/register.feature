@@ -4,8 +4,10 @@ Feature: User register
     Given user on the register page
 
   Scenario: The user register success
-    When a user enter a not registered email
-    And length 8 to 12 passwords
+    When a user enter a not registered email and length 8 to 12 password
+      | email           | password |
+      | rex@mail.com    | 12345678 |
+      | tester@mail.com | 1111111  |
     Then show message to user
     And store user information
     And forward to main page
