@@ -9,7 +9,7 @@ import java.util.Date;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-// @RequiredArgsConstructor(staticName = "of")
+@RequiredArgsConstructor(staticName = "of")
 @Entity
 @Table(name = "user")
 public class User {
@@ -17,8 +17,10 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NonNull
     @Column(name = "email", length = 30, nullable = false)
     private String email;
+    @NonNull
     @Column(name = "password", length = 12, nullable = false)
     private String password;
     @Column(name = "create_date", nullable = false)

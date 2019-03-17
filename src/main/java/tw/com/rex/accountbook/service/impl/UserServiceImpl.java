@@ -16,11 +16,11 @@ import java.util.Date;
 public class UserServiceImpl implements UserService {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
-    private final UserRepository userDao;
+    private final UserRepository userRepository;
 
     @Autowired
-    public UserServiceImpl(UserRepository userDao) {
-        this.userDao = userDao;
+    public UserServiceImpl(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
     @Override
@@ -29,7 +29,7 @@ public class UserServiceImpl implements UserService {
             Date today = new Date();
             user.setCreateDate(today);
             user.setUpdateDate(today);
-            user = userDao.save(user);
+            user = userRepository.save(user);
             logger.info("saved user: {}", user);
             return user;
         }
@@ -37,7 +37,7 @@ public class UserServiceImpl implements UserService {
     }
 
     private boolean isEmailExists(String email) {
-        return userDao.countByEmail(email) > 0;
+        return userRepository.countByEmail(email) > 0;
     }
 
 }

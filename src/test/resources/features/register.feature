@@ -4,14 +4,13 @@ Feature: User register
     Given user on the register page
 
   @register
-  Scenario: The user register success
-    When a user enter a not registered email and length 8 to 12 password
+  Scenario Outline: The user register success
+    When user enter "<email>" and "<password>" to register
+    Then forward to main page
+    Examples:
       | email           | password |
       | rex@mail.com    | 12345678 |
       | tester@mail.com | 1111111  |
-    Then show "註冊成功" to user
-    And store user information
-    And forward to main page
 
   Scenario: The user enters an email was registered to causing register fail
     When a user enters registered email
