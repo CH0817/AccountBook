@@ -1,9 +1,9 @@
+@txn
 Feature: User register
 
   Background:
     Given user on the register page
 
-  @register
   Scenario Outline: The user register success
     When user enter "<email>" and "<password>" to register
     Then forward to main page

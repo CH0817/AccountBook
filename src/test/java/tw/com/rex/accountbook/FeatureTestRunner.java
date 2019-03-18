@@ -1,10 +1,9 @@
 package tw.com.rex.accountbook;
 
 import cucumber.api.CucumberOptions;
-import net.serenitybdd.cucumber.CucumberWithSerenity;
+import cucumber.api.junit.Cucumber;
 import org.junit.runner.RunWith;
 
-@RunWith(CucumberWithSerenity.class)
-@CucumberOptions(plugin = {"pretty", "html:target/cucumber", "junit:target/junit-report.xml"},
-                 features = {"src/test/resources/features"})
+@RunWith(Cucumber.class)
+@CucumberOptions(plugin = {"pretty"}, features = {"src/test/resources/features"})
 public class FeatureTestRunner {}
