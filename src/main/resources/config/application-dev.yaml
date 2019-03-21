@@ -1,0 +1,32 @@
+server:
+  port: 8082
+spring:
+  thymeleaf:
+    cache: false
+  datasource:
+    # H2 URL 指定實體 【jdbc:h2:file:<DB檔案位置>/<databaseName>】 (windows 專用)
+    #  url: jdbc:h2:file:D:/Temp/H2/account_book
+    # H2 URL 記憶體資料庫 【jdbc:h2:mem:<databaseName>】
+    url: jdbc:h2:mem:account_book
+    username: root
+    password: 111111
+    driver-class-name: org.h2.Driver
+    schema: classpath:/test-db/schema-h2.sql
+    data:  classpath:/test-db/data-h2.sql
+  h2:
+    console:
+      settings:
+        # 是否允許外網訪問
+        web-allow-others: true
+      # H2 控制台網址
+      path: /h2-console
+      # 打開 H2 控制台
+      enabled: true
+logging:
+  level:
+    org:
+      hibernate:
+        type:
+          descriptor:
+            sql:
+              BasicBinder: trace
