@@ -3,6 +3,7 @@ package tw.com.rex.accountbook.repository.dao;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import tw.com.rex.accountbook.repository.dao.base.BaseDTO;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -12,11 +13,8 @@ import java.util.Date;
 @AllArgsConstructor
 @Entity
 @Table(name = "transaction")
-public class TransactionDTO {
+public class TransactionDTO extends BaseDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
     @Transient
     private AccountDTO accountDTO;
     @Transient

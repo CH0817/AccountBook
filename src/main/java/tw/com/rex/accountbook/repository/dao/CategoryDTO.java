@@ -3,6 +3,7 @@ package tw.com.rex.accountbook.repository.dao;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import tw.com.rex.accountbook.repository.dao.base.BaseDTO;
 
 import javax.persistence.*;
 
@@ -11,11 +12,8 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Entity
 @Table(name = "category")
-public class CategoryDTO {
+public class CategoryDTO extends BaseDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
     @Column(name = "name", unique = true, nullable = false, length = 10)
     private String name;
     @Column(name = "category_type", nullable = false)
