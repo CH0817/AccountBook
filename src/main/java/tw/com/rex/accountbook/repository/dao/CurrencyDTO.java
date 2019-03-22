@@ -11,7 +11,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Entity
 @Table(name = "currency")
-public class Currency {
+public class CurrencyDTO {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

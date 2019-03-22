@@ -1,9 +1,9 @@
 package tw.com.rex.accountbook.service;
 
-import tw.com.rex.accountbook.repository.dao.AccountType;
+import tw.com.rex.accountbook.repository.dao.AccountTypeDTO;
 
 public interface AccountTypeService {
 
-    AccountType findByName(String name);
+    AccountTypeDTO findByName(String name);
 
 }

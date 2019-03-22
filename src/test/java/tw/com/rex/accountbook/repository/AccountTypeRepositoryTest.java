@@ -12,7 +12,7 @@ import static org.junit.Assert.assertNotNull;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest
-public class AccountTypeDTORepositoryTest {
+public class AccountTypeRepositoryTest {
 
     @Autowired
     private AccountTypeRepository accountTypeRepository;

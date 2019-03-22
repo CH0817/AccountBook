@@ -11,7 +11,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Entity
 @Table(name = "category")
-public class Category {
+public class CategoryDTO {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -17,7 +17,7 @@ import static org.mockito.Mockito.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.NONE)
-public class AccountTypeDTOServiceTest {
+public class AccountTypeServiceTest {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
     @Autowired

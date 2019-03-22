@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import tw.com.rex.accountbook.repository.dao.AccountType;
+import tw.com.rex.accountbook.repository.dao.AccountTypeDTO;
 import tw.com.rex.accountbook.service.AccountTypeService;
 
 @RestController
@@ -23,7 +23,7 @@ public class AccountTypeController {
     }
 
     @GetMapping("/find/name/{name}")
-    public AccountType findByName(@PathVariable String name) {
+    public AccountTypeDTO findByName(@PathVariable String name) {
         logger.info("input name: {}", name);
         return accountTypeService.findByName(name);
     }

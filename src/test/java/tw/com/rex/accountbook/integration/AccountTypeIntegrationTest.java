@@ -18,7 +18,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc
-public class AccountTypeDTOIntegrationTest {
+public class AccountTypeIntegrationTest {
 
     @Autowired
     private MockMvc mvc;

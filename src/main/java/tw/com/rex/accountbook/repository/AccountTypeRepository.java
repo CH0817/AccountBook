@@ -2,11 +2,11 @@ package tw.com.rex.accountbook.repository;
 
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
-import tw.com.rex.accountbook.repository.dao.AccountType;
+import tw.com.rex.accountbook.repository.dao.AccountTypeDTO;
 
 @Repository
-public interface AccountTypeRepository extends PagingAndSortingRepository<AccountType, Long> {
+public interface AccountTypeRepository extends PagingAndSortingRepository<AccountTypeDTO, Long> {
 
-    AccountType findByName(String name);
+    AccountTypeDTO findByName(String name);
 
 }

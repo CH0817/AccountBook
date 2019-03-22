@@ -13,7 +13,7 @@ import java.util.Date;
 @AllArgsConstructor
 @Entity
 @Table(name = "account")
-public class Account {
+public class AccountDTO {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,7 +23,7 @@ public class Account {
     @Transient
     private AccountTypeDTO accountType;
     @Transient
-    private Currency currency;
+    private CurrencyDTO currency;
     @Column(name = "init_money", nullable = false)
     private BigDecimal initMoney;
     @Column(name = "current_money", nullable = false)

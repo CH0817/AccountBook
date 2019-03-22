@@ -11,7 +11,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Entity
 @Table(name = "item")
-public class Item {
+public class ItemDTO {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,6 +19,6 @@ public class Item {
     @Column(name = "name", unique = true, nullable = false, length = 10)
     private String name;
     @Transient
-    private Category category;
+    private CategoryDTO category;
 
 }
