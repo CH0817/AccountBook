@@ -12,8 +12,8 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "transaction")
-public class TransactionDAO extends BaseDAO {
+@Table(name = "trade")
+public class TradeDAO extends BaseDAO {
 
     @ManyToOne(targetEntity = AccountDAO.class)
     @JoinColumn(name = "account_id", nullable = false)

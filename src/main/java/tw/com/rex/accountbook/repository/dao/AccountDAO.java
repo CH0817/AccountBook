@@ -37,6 +37,6 @@ public class AccountDAO extends BaseDAO {
     private String note;
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "account_id")
-    private List<TransactionDAO> transactions;
+    private List<TradeDAO> transactions;
 
 }
