@@ -3,7 +3,7 @@ package tw.com.rex.accountbook.repository.dao;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import tw.com.rex.accountbook.repository.dao.base.BaseDTO;
+import tw.com.rex.accountbook.repository.dao.base.BaseDAO;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -14,14 +14,14 @@ import java.util.Date;
 @AllArgsConstructor
 @Entity
 @Table(name = "account")
-public class AccountDTO extends BaseDTO {
+public class AccountDAO extends BaseDAO {
 
     @Column(name = "name", unique = true, nullable = false, length = 10)
     private String name;
     @Transient
-    private AccountTypeDTO accountType;
+    private AccountTypeDAO accountType;
     @Transient
-    private CurrencyDTO currency;
+    private CurrencyDAO currency;
     @Column(name = "init_money", nullable = false)
     private BigDecimal initMoney;
     @Column(name = "current_money", nullable = false)

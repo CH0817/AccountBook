@@ -11,7 +11,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import tw.com.rex.accountbook.repository.dao.AccountTypeDTO;
+import tw.com.rex.accountbook.repository.dao.AccountTypeDAO;
 import tw.com.rex.accountbook.service.AccountTypeService;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -32,7 +32,7 @@ public class AccountTypeControllerTest {
     @Test
     public void testFindByName() throws Exception {
 
-        AccountTypeDTO entity = new AccountTypeDTO("銀行");
+        AccountTypeDAO entity = new AccountTypeDAO("銀行");
 
         given(accountTypeService.findByName(entity.getName())).willReturn(entity);
 

@@ -9,7 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 import tw.com.rex.accountbook.repository.AccountTypeRepository;
-import tw.com.rex.accountbook.repository.dao.AccountTypeDTO;
+import tw.com.rex.accountbook.repository.dao.AccountTypeDAO;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.ArgumentMatchers.anyString;
@@ -28,10 +28,10 @@ public class AccountTypeServiceTest {
     @Test
     public void testFindByName() {
         // given
-        AccountTypeDTO entity = new AccountTypeDTO("銀行");
+        AccountTypeDAO entity = new AccountTypeDAO("銀行");
         // when
         when(accountTypeRepository.findByName(anyString())).thenReturn(entity);
-        AccountTypeDTO accountType = accountTypeService.findByName(entity.getName());
+        AccountTypeDAO accountType = accountTypeService.findByName(entity.getName());
         // then
         verify(accountTypeRepository, atLeastOnce()).findByName(anyString());
         assertEquals("銀行", accountType.getName());
