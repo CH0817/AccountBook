@@ -11,7 +11,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import tw.com.rex.accountbook.repository.dao.AccountType;
+import tw.com.rex.accountbook.repository.dao.AccountTypeDTO;
 import tw.com.rex.accountbook.service.AccountTypeService;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -22,7 +22,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc
-public class AccountTypeControllerTest {
+public class AccountTypeDTOControllerTest {
 
     @Autowired
     private MockMvc mvc;
@@ -32,7 +32,7 @@ public class AccountTypeControllerTest {
     @Test
     public void testFindByName() throws Exception {
 
-        AccountType entity = AccountType.of("銀行");
+        AccountTypeDTO entity = new AccountTypeDTO("銀行");
 
         given(accountTypeService.findByName(entity.getName())).willReturn(entity);
 

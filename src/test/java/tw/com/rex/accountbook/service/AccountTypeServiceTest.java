@@ -9,7 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 import tw.com.rex.accountbook.repository.AccountTypeRepository;
-import tw.com.rex.accountbook.repository.dao.AccountType;
+import tw.com.rex.accountbook.repository.dao.AccountTypeDTO;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.ArgumentMatchers.anyString;
@@ -17,7 +17,7 @@ import static org.mockito.Mockito.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.NONE)
-public class AccountTypeServiceTest {
+public class AccountTypeDTOServiceTest {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
     @Autowired
@@ -28,10 +28,10 @@ public class AccountTypeServiceTest {
     @Test
     public void testFindByName() {
         // given
-        AccountType entity = AccountType.of("銀行");
+        AccountTypeDTO entity = new AccountTypeDTO("銀行");
         // when
         when(accountTypeRepository.findByName(anyString())).thenReturn(entity);
-        AccountType accountType = accountTypeService.findByName(entity.getName());
+        AccountTypeDTO accountType = accountTypeService.findByName(entity.getName());
         // then
         verify(accountTypeRepository, atLeastOnce()).findByName(anyString());
         assertEquals("銀行", accountType.getName());

@@ -5,14 +5,14 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.junit4.SpringRunner;
-import tw.com.rex.accountbook.repository.dao.AccountType;
+import tw.com.rex.accountbook.repository.dao.AccountTypeDTO;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest
-public class AccountTypeRepositoryTest {
+public class AccountTypeDTORepositoryTest {
 
     @Autowired
     private AccountTypeRepository accountTypeRepository;
@@ -22,7 +22,7 @@ public class AccountTypeRepositoryTest {
         // given
         String name = "銀行";
         // when
-        AccountType accountType = accountTypeRepository.findByName(name);
+        AccountTypeDTO accountType = accountTypeRepository.findByName(name);
         // then
         assertNotNull(accountType);
         assertEquals(name, accountType.getName());
@@ -31,9 +31,9 @@ public class AccountTypeRepositoryTest {
     @Test
     public void testSave() {
         // given
-        AccountType entity = AccountType.of("悠遊卡");
+        AccountTypeDTO entity = new AccountTypeDTO("悠遊卡");
         // when
-        AccountType saved = accountTypeRepository.save(entity);
+        AccountTypeDTO saved = accountTypeRepository.save(entity);
         // then
         assertNotNull(saved.getId());
         assertEquals(entity.getName(), saved.getName());

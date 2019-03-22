@@ -21,7 +21,7 @@ public class Account {
     @Column(name = "name", unique = true, nullable = false, length = 10)
     private String name;
     @Transient
-    private AccountType accountType;
+    private AccountTypeDTO accountType;
     @Transient
     private Currency currency;
     @Column(name = "init_money", nullable = false)
