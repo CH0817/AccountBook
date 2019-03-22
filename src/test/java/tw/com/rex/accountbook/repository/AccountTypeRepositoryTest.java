@@ -7,6 +7,8 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import tw.com.rex.accountbook.repository.dao.AccountTypeDTO;
 
+import java.time.LocalDate;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
@@ -31,7 +33,11 @@ public class AccountTypeRepositoryTest {
     @Test
     public void testSave() {
         // given
+        LocalDate now = LocalDate.now();
         AccountTypeDTO entity = new AccountTypeDTO("悠遊卡");
+        entity.setName("悠遊卡");
+        entity.setCreateDate(now);
+        entity.setUpdateDate(now);
         // when
         AccountTypeDTO saved = accountTypeRepository.save(entity);
         // then
