@@ -16,7 +16,8 @@ public class ItemDAO extends BaseDAO {
 
     @Column(name = "name", unique = true, nullable = false, length = 10)
     private String name;
-    @Transient
+    @ManyToOne(targetEntity = CategoryDAO.class)
+    @JoinColumn(name = "category_id", nullable = false)
     private CategoryDAO category;
 
 }

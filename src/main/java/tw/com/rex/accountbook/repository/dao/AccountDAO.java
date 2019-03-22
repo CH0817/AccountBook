@@ -7,7 +7,8 @@ import tw.com.rex.accountbook.repository.dao.base.BaseDAO;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
-import java.util.Date;
+import java.time.LocalDate;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -18,19 +19,24 @@ public class AccountDAO extends BaseDAO {
 
     @Column(name = "name", unique = true, nullable = false, length = 10)
     private String name;
-    @Transient
+    @ManyToOne(targetEntity = AccountDAO.class)
+    @JoinColumn(name = "account_type_id", nullable = false)
     private AccountTypeDAO accountType;
-    @Transient
+    @ManyToOne(targetEntity = CurrencyDAO.class)
+    @JoinColumn(name = "currency_id", nullable = false)
     private CurrencyDAO currency;
     @Column(name = "init_money", nullable = false)
     private BigDecimal initMoney;
     @Column(name = "current_money", nullable = false)
     private BigDecimal currentMoney;
     @Column(name = "closing_date")
-    private Date closingDate;
+    private LocalDate closingDate;
     @Column(name = "payment_due_date")
-    private Date paymentDueDate;
+    private LocalDate paymentDueDate;
     @Column(name = "note", length = 150)
     private String note;
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "account_id")
+    private List<TransactionDAO> transactions;
 
 }

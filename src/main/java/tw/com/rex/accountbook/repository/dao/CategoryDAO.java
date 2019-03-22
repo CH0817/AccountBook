@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import tw.com.rex.accountbook.repository.dao.base.BaseDAO;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -18,5 +19,8 @@ public class CategoryDAO extends BaseDAO {
     private String name;
     @Column(name = "category_type", nullable = false)
     private Integer categoryType;
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "category_id")
+    private List<ItemDAO> items;
 
 }
